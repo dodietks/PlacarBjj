@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-//eeeeee
 
 public class MainController {
     private JPanel mainPane;
@@ -39,10 +38,10 @@ public class MainController {
         bTwoPoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     doisPontos();
                     total();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bTwoPoint.getText()) > 0) {
                     doisPontosMinus();
                     total();
                 }
@@ -51,10 +50,10 @@ public class MainController {
         bThreePoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     tresPontos();
                     total();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bThreePoint.getText()) > 0) {
                     tresPontosMinus();
                     total();
                 }
@@ -63,10 +62,10 @@ public class MainController {
         bFourPoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     quatroPontos();
                     total();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFourPoint.getText()) > 0) {
                     quatroPontosMinus();
                     total();
                 }
@@ -75,9 +74,9 @@ public class MainController {
         bFault.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     fault();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFault.getText()) > 0) {
                     faultMinus();
                 }
             }
@@ -85,9 +84,9 @@ public class MainController {
         bAdvantage.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     advantage();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bAdvantage.getText()) > 0) {
                     advantageMinus();
                 }
             }
@@ -96,10 +95,10 @@ public class MainController {
         bTwoPoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     doisPontos2();
                     total2();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bTwoPoint2.getText()) > 0) {
                     doisPontosMinus2();
                     total2();
                 }
@@ -108,10 +107,10 @@ public class MainController {
         bThreePoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     tresPontos2();
                     total2();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bThreePoint2.getText()) > 0) {
                     tresPontosMinus2();
                     total2();
                 }
@@ -120,10 +119,10 @@ public class MainController {
         bFourPoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     quatroPontos2();
                     total2();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFourPoint2.getText()) > 0) {
                     quatroPontosMinus2();
                     total2();
                 }
@@ -132,9 +131,9 @@ public class MainController {
         bFault2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     fault2();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFault2.getText()) > 0) {
                     faultMinus2();
                 }
             }
@@ -142,13 +141,14 @@ public class MainController {
         bAdvantage2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == MouseEvent.BUTTON1) {
+                if (e.getButton() == e.BUTTON1) {
                     advantage2();
-                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.parseInt(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bAdvantage2.getText()) > 0) {
                     advantageMinus2();
                 }
             }
         });
+
     }
 
     /*
