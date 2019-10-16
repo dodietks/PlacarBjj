@@ -1,13 +1,13 @@
+import view.gui
 import javax.swing.JFrame
-import java.awt.Frame.MAXIMIZED_BOTH
 
 
 
 
 
-fun main() {
+fun main(args: Array<String>) {
     val frame = JFrame("Placar BJJ")
-    frame.contentPane = MainController().mainPane
+    frame.contentPane = gui().mainPane
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.setSize(1300, 900)
     frame.isResizable = true

@@ -1,12 +1,18 @@
+package view;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MainController {
+public class gui {
     private JPanel mainPane;
 
     private JPanel pTimer;
-    private JLabel lTimer;
+    private JLabel lMinuto;
+    private JLabel lSegundo;
+    int minuto = 5, segundo = 0;
+    String sMinuto, sSegundo;
+    Boolean rodando = false;
 
     private JButton bTwoPoint;
     private JButton bThreePoint;
@@ -32,9 +38,11 @@ public class MainController {
     private JTextField tfCompetidorUm;
     private JTextField tfCompetidorDois;
 
-    public MainController() {
+    public gui() {
         mainPane.setBackground(Color.GRAY);
 
+        /*Timer*/
+        /*Controle da pontuação*/
         bTwoPoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -156,11 +164,72 @@ public class MainController {
                 System.exit(0);
             }
         });
+        pTimer.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                if (e.getButton() == e.BUTTON1 && rodando == false) {
+                    super.mouseReleased(e);
+                    iniciar();
+                } else if (e.getButton() == e.BUTTON3) {
+                    super.mouseReleased(e);
+                    rodando = false;
+                    resetTimer();
+                } else if (e.getButton() == e.BUTTON1 && rodando == true){
+                    rodando = false;
+                }
+            }
+        });
     }
 
-    /*
-    início da pontuação do primeiro competidor
-     */
+    /*Timer*/
+
+    private void resetTimer() {
+        minuto = 5;
+        segundo = 0;
+        lMinuto.setText("05:");
+        lSegundo.setText("00");
+    }
+
+    private void iniciar() {
+        rodando = true;
+        Thread fazer = new Thread() {
+            public void run() {
+                for (; ; ) {
+                    if (rodando == true) {
+                        try {
+                            if (segundo == 0) {
+                                segundo=59;
+                                minuto--;
+                            }
+                            atualizaLSegundo();
+                            atualizaLMinuto();
+                            segundo--;
+                            sleep(1000);
+                        } catch (Exception e) {
+
+                        }
+                    } else {
+                        break;
+                    }
+                }
+            }
+        };
+        fazer.start();
+    }
+
+    private void atualizaLSegundo() {
+        sSegundo = (segundo <= 9 ? "0" : "") + segundo;
+        System.out.println(sSegundo);
+        lSegundo.setText(sSegundo);
+    }
+
+    private void atualizaLMinuto() {
+        sMinuto = (minuto <= 9 ? "0" : "") + minuto;
+        System.out.println(sMinuto + ":");
+        lMinuto.setText(sMinuto + ":");
+    }
+
+    /*    início da pontuação do primeiro competidor     */
     private void doisPontos() {
         int valor = Integer.parseInt(bTwoPoint.getText());
         int bTwoPointValue = valor + 2;
