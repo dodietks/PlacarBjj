@@ -2,17 +2,17 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class gui {
-    private JPanel mainPane;
-
-    private JPanel pTimer;
-    private JLabel lMinuto;
-    private JLabel lSegundo;
     int minuto = 5, segundo = 0;
     String sMinuto, sSegundo;
     Boolean rodando = false;
+    private JPanel mainPane;
+    private JPanel pTimer;
+    private JLabel lMinuto;
+    private JLabel lSegundo;
 
     private JButton bTwoPoint;
     private JButton bThreePoint;
@@ -46,10 +46,10 @@ public class gui {
         bTwoPoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     doisPontos();
                     total();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bTwoPoint.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bTwoPoint.getText()) > 0) {
                     doisPontosMinus();
                     total();
                 }
@@ -58,10 +58,10 @@ public class gui {
         bThreePoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     tresPontos();
                     total();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bThreePoint.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bThreePoint.getText()) > 0) {
                     tresPontosMinus();
                     total();
                 }
@@ -70,10 +70,10 @@ public class gui {
         bFourPoint.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     quatroPontos();
                     total();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFourPoint.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bFourPoint.getText()) > 0) {
                     quatroPontosMinus();
                     total();
                 }
@@ -82,9 +82,9 @@ public class gui {
         bFault.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     fault();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFault.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bFault.getText()) > 0) {
                     faultMinus();
                 }
             }
@@ -92,9 +92,9 @@ public class gui {
         bAdvantage.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     advantage();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bAdvantage.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bAdvantage.getText()) > 0) {
                     advantageMinus();
                 }
             }
@@ -103,10 +103,10 @@ public class gui {
         bTwoPoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     doisPontos2();
                     total2();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bTwoPoint2.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bTwoPoint2.getText()) > 0) {
                     doisPontosMinus2();
                     total2();
                 }
@@ -115,10 +115,10 @@ public class gui {
         bThreePoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     tresPontos2();
                     total2();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bThreePoint2.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bThreePoint2.getText()) > 0) {
                     tresPontosMinus2();
                     total2();
                 }
@@ -127,10 +127,10 @@ public class gui {
         bFourPoint2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     quatroPontos2();
                     total2();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFourPoint2.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bFourPoint2.getText()) > 0) {
                     quatroPontosMinus2();
                     total2();
                 }
@@ -139,9 +139,9 @@ public class gui {
         bFault2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     fault2();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bFault2.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bFault2.getText()) > 0) {
                     faultMinus2();
                 }
             }
@@ -149,9 +149,9 @@ public class gui {
         bAdvantage2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1) {
+                if (e.getButton() == MouseEvent.BUTTON1) {
                     advantage2();
-                } else if (e.getButton() == e.BUTTON3 && Integer.valueOf(bAdvantage2.getText()) > 0) {
+                } else if (e.getButton() == MouseEvent.BUTTON3 && Integer.valueOf(bAdvantage2.getText()) > 0) {
                     advantageMinus2();
                 }
             }
@@ -167,14 +167,14 @@ public class gui {
         pTimer.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                if (e.getButton() == e.BUTTON1 && rodando == false) {
+                if (e.getButton() == MouseEvent.BUTTON1 && rodando == false) {
                     super.mouseReleased(e);
                     iniciar();
-                } else if (e.getButton() == e.BUTTON3) {
+                } else if (e.getButton() == MouseEvent.BUTTON3) {
                     super.mouseReleased(e);
                     rodando = false;
-                    resetTimer();
-                } else if (e.getButton() == e.BUTTON1 && rodando == true){
+                    reset();
+                } else if (e.getButton() == MouseEvent.BUTTON1 && rodando == true) {
                     rodando = false;
                 }
             }
@@ -183,37 +183,54 @@ public class gui {
 
     /*Timer*/
 
-    private void resetTimer() {
+    private void reset() {
         minuto = 5;
         segundo = 0;
-        lMinuto.setText("05:");
-        lSegundo.setText("00");
+        sMinuto = (minuto <= 9 ? "0" : "") + minuto;
+        sSegundo = (segundo <= 9 ? "0" : "") + segundo;
+        lMinuto.setText(sMinuto + ":");
+        lSegundo.setText(sSegundo);
+
+        bTwoPoint.setText("0");
+        bThreePoint.setText("0");
+        bFourPoint.setText("0");
+        bFault.setText("0");
+        bAdvantage.setText("0");
+        bTotal.setText("0");
+
+        bTwoPoint2.setText("0");
+        bThreePoint2.setText("0");
+        bFourPoint2.setText("0");
+        bAdvantage2.setText("0");
+        bFault2.setText("0");
+        bTotal2.setText("0");
+
+        tfCompetidorUm.setText("Competidor Um");
+        tfCompetidorDois.setText("Competidor Dois");
     }
 
     private void iniciar() {
         rodando = true;
-        Thread fazer = new Thread() {
-            public void run() {
-                for (; ; ) {
-                    if (rodando == true) {
-                        try {
-                            if (segundo == 0) {
-                                segundo=59;
-                                minuto--;
-                            }
-                            atualizaLSegundo();
-                            atualizaLMinuto();
-                            segundo--;
-                            sleep(1000);
-                        } catch (Exception e) {
-
+        Thread fazer = new Thread(() -> {
+            for (; ; ) {
+                if (rodando == true) {
+                    try {
+                        if (segundo == 0) {
+                            segundo = 59;
+                            minuto--;
                         }
-                    } else {
-                        break;
+                        atualizaLSegundo();
+                        atualizaLMinuto();
+                        segundo--;
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+
                     }
+                } else {
+                    break;
                 }
             }
-        };
+        });
         fazer.start();
     }
 

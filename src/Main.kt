@@ -1,10 +1,6 @@
 import view.gui
 import javax.swing.JFrame
 
-
-
-
-
 fun main(args: Array<String>) {
     val frame = JFrame("Placar BJJ")
     frame.contentPane = gui().mainPane
