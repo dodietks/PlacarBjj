@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class MainController {
     private JPanel mainPane;
@@ -17,7 +16,6 @@ public class MainController {
     private JButton bTotal;
 
     private JPanel pCompetidorUm;
-    private JLabel lCompetidorUm;
 
     private JButton bTwoPoint2;
     private JButton bThreePoint2;
@@ -27,10 +25,12 @@ public class MainController {
     private JButton bTotal2;
 
     private JPanel pCompetidorDois;
-    private JLabel lCompetidorDois;
 
     private JPanel pPontoUm;
     private JPanel pPontoDois;
+    private JButton xButton;
+    private JTextField tfCompetidorUm;
+    private JTextField tfCompetidorDois;
 
     public MainController() {
         mainPane.setBackground(Color.GRAY);
@@ -149,6 +149,13 @@ public class MainController {
             }
         });
 
+        xButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                super.mouseReleased(e);
+                System.exit(0);
+            }
+        });
     }
 
     /*
